@@ -30,9 +30,18 @@ public class Hook extends BaseUtil{
     }
 
     @Before
+    // public void InitializeTest(Scenario scenario) {
+    //     base.scenarioDef = base.features.createNode(scenario.getName());
+    //     WebDriverManager.chromedriver().setup();
+    //     ChromeOptions chromeOptions = new ChromeOptions();
+    //     chromeOptions.addArguments("--headless");
+    //     base.Driver = new ChromeDriver(chromeOptions);
+    // }
+
     public void InitializeTest(Scenario scenario) {
-        base.scenarioDef = base.features.createNode(scenario.getName());
-        WebDriverManager.chromedriver().setup();
+        String chromeDriverPath = "D:\Libs\chromedriver.exe"; // Specify the path to your ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        WebDriverManager.chromedriver().setup(); // You can also use WebDriverManager as shown in your code
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
         base.Driver = new ChromeDriver(chromeOptions);
