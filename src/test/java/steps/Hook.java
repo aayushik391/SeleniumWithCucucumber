@@ -39,7 +39,7 @@ public class Hook extends BaseUtil{
     // }
 
     public void InitializeTest(Scenario scenario) {
-        String chromeDriverPath = "D:\\Libs"; // Specify the path to your ChromeDriver executable
+        String chromeDriverPath = "D:\\Libs\\chromedriver.exe"; // Specify the path to your ChromeDriver executable
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         WebDriverManager.chromedriver().setup(); // You can also use WebDriverManager as shown in your code
         ChromeOptions chromeOptions = new ChromeOptions();
